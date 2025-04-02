@@ -63,4 +63,8 @@
 ## การปรับแต่งเพิ่มเติม
 หากคุณต้องการเพิ่มฟังก์ชัน เช่น ค้นหาหรือกรองข้อมูลตามชื่อพนักงาน สามารถทำได้โดยปรับแต่งโค้ดในไฟล์ `script.js` ตามความต้องการของคุณ
 
+![Screenshot](screencapture-work-pltrue-pages-dev-2025-04-02-22_03_22.png)
+![Screenshot](screencapture-work-pltrue-pages-dev-2025-04-02-22_04_53.png)
+
+
 
