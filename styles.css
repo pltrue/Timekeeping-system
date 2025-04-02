@@ -1,0 +1,239 @@
+:root {
+    --primary-color: #4c6ef5;
+    --secondary-color: #f8f9fa;
+    --accent-color: #37b24d;
+    --google-color: #4285f4;
+    --danger-color: #fa5252;
+    --text-color: #343a40;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kanit', 'Prompt', 'Sarabun', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: var(--text-color);
+}
+
+.container {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 30px;
+    width: 100%;
+    max-width: 800px;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#loginSection {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-color);
+}
+
+#loginSection p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+#authorize_button {
+    background-color: var(--google-color);
+}
+
+#authorize_button:hover {
+    background-color: #3367d6;
+}
+
+h2, h3 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+h2 {
+    font-size: 28px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 110, 245, 0.2);
+}
+
+.time-group {
+    display: flex;
+    gap: 15px;
+}
+
+.time-group .form-group {
+    flex: 1;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+button:hover {
+    background-color: #3b5bdb;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#refreshButton {
+    background-color: var(--accent-color);
+}
+
+#refreshButton:hover {
+    background-color: #2b9e3f;
+}
+
+#signout_button {
+    background-color: var(--danger-color);
+}
+
+#signout_button:hover {
+    background-color: #e03131;
+}
+
+.result-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid var(--secondary-color);
+}
+
+.result-title {
+    color: var(--text-color);
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.result-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.table-container {
+    margin-top: 30px;
+    overflow-x: auto;
+}
+
+#loading-message {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-color);
+    font-style: italic;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: var(--secondary-color);
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    .time-group, .button-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    th, td {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+    
+    .result-display {
+        font-size: 20px;
+    }
+}

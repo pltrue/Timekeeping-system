@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บันทึกเวลาทำงาน - Google Sheets</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google API Client และ Sheets API -->
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://accounts.google.com/gsi/client"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>บันทึกเวลาทำงาน</h2>
+        
+        <!-- ส่วนล็อกอิน Google -->
+        <div id="loginSection">
+            <p>กรุณาเข้าสู่ระบบเพื่อใช้งาน Google Sheets</p>
+            <button id="authorize_button">เข้าสู่ระบบด้วย Google</button>
+            <button id="signout_button" style="display: none;">ออกจากระบบ</button>
+        </div>
+        
+        <!-- ส่วนฟอร์มบันทึกเวลา -->
+        <div id="formSection" style="display: none;">
+            <div class="form-group">
+                <label for="workDate">วันที่ทำงาน:</label>
+                <input type="date" id="workDate">
+            </div>
+            
+            <div class="form-group">
+                <label for="employeeName">ชื่อพนักงาน:</label>
+                <input type="text" id="employeeName" placeholder="ระบุชื่อพนักงาน">
+            </div>
+            
+            <div class="time-group">
+                <div class="form-group">
+                    <label for="startTime">เวลาเข้างาน:</label>
+                    <input type="time" id="startTime">
+                </div>
+                
+                <div class="form-group">
+                    <label for="endTime">เวลาออกงาน:</label>
+                    <input type="time" id="endTime">
+                </div>
+            </div>
+            
+            <div class="button-group">
+                <button id="saveButton">บันทึกเวลา</button>
+                <button id="refreshButton">โหลดข้อมูลใหม่</button>
+            </div>
+            
+            <div class="result-section">
+                <h3 class="result-title">สรุปชั่วโมงการทำงาน</h3>
+                <div class="result-display" id="result">-- ชั่วโมง -- นาที</div>
+            </div>
+        </div>
+        
+        <!-- ส่วนแสดงประวัติการทำงาน -->
+        <div id="historySection" style="display: none;">
+            <div class="table-container">
+                <h3>ประวัติการทำงาน</h3>
+                <p id="loading-message">กำลังโหลดข้อมูล...</p>
+                <table id="workTable">
+                    <thead>
+                        <tr>
+                            <th>วันที่</th>
+                            <th>ชื่อพนักงาน</th>
+                            <th>เวลาเข้างาน</th>
+                            <th>เวลาออกงาน</th>
+                            <th>รวมเวลา</th>
+                        </tr>
+                    </thead>
+                    <tbody id="workEntries">
+                        <!-- ข้อมูลจะถูกเพิ่มที่นี่ด้วย JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
